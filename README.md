@@ -1,7 +1,8 @@
 Yii 2 CMS by Ivan Smorodin.
 
-DIRECTORY STRUCTURE ы
--------------------
+DIRECTORY STRUCTURE
+--------------------
+---
 common
 	config/				contains shared configurations
 	mail/				contains view files for e-mails
