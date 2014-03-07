@@ -62,9 +62,6 @@ $form = AF::begin();
                 <th>Дата<br>редактирования</th>
                 <th>№</th>
             </tr>
-			<?PHP
-			var_dump($posts);
-			?>
             <? foreach ($posts as $post): ?>
                 <tr>
 
