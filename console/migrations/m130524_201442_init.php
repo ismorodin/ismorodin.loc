@@ -24,6 +24,8 @@ class m130524_201442_init extends \yii\db\Migration
 			'created_at' => Schema::TYPE_INTEGER . ' NOT NULL',
 			'updated_at' => Schema::TYPE_INTEGER . ' NOT NULL',
 		], $tableOptions);
+                
+                
 	}
 
 	public function down()
