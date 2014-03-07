@@ -82,8 +82,7 @@ class PostsController extends BackendController {
     }
 
 //Add materials
-    public
-            function actionAdd() {
+    public function actionAdd() {
         $model = new Posts();
         $users = Users::find();
         if ($model->load($_POST)) {
