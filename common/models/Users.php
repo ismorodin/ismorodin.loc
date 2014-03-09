@@ -76,4 +76,9 @@ class Users extends \yii\db\ActiveRecord
 	{
 		return $this->hasMany(Profiles::className(), ['user_id' => 'id']);
 	}
+
+	public function getComments()
+	{
+		return $this->hasMany(Comments::className(), ['user_id' => 'id']);
+	}
 }

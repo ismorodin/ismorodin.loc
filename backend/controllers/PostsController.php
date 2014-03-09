@@ -1,8 +1,4 @@
-<?php
-
-/*
- * @author Ivan Smorodin
- */
+<?PHP
 
 namespace backend\controllers;
 
@@ -14,10 +10,20 @@ use yii\web\AccessControl;
 use Yii;
 
 /**
- * Posts Controller
+ * PostsController
+ *
+ * PostController need to work with the material site
+ * @author Ivan Smorodin <ismorodin@hotmail.com>
+ * @since 2.0
+ * @name PostController
+ * @see common\models\Posts;
+ * @see common\models\Users;
  */
 class PostsController extends BackendController {
 
+    /**
+     * @return array
+     */
     public function behaviors() {
         return [
             'access' => [
@@ -33,7 +39,13 @@ class PostsController extends BackendController {
         ];
     }
 
-//Load materials
+    /**
+     * All posts
+     * 
+     * displays all the posts from the model \common\models\Posts
+     * @return \yii\base\View index
+     * @see \common\models\Posts
+     * */
     public function actionIndex() {
         $posts = Posts::find();
         $countPosts = clone $posts;
@@ -50,7 +62,14 @@ class PostsController extends BackendController {
         );
     }
 
-//Update materials by ID
+    /**
+     * Update posts by ID
+     * 
+     * Need for updated news by id
+     * @param integer $id - id news from DB
+     * @return \yii\base\View index
+     * @see \common\models\Posts
+     */
     public function actionUpdate($id) {
         $id = (int) intval(abs($id));
         if (isset($id)) {
@@ -69,7 +88,14 @@ class PostsController extends BackendController {
         }
     }
 
-//Delete materials with param
+    /**
+     * Delete posts by ID
+     * 
+     * Delete posts by ID from the model [[\common\models\Posts.]]
+     * @param int $id - pk id from models [common\models\Posts]
+     * @return \yii\base\View index
+     * @see \common\models\Posts
+     */
     public function actionDelete($id) {
         if ($id === null) {
             $this->redirect(array('posts/index'));
@@ -81,7 +107,13 @@ class PostsController extends BackendController {
         }
     }
 
-//Add materials
+    /**
+     * Add posts
+     * 
+     * Add posts in the model [[\common\models\Posts]]
+     * @return \yii\base\View index
+     * @see \common\models\Posts
+     */
     public function actionAdd() {
         $model = new Posts();
         $users = Users::find();
