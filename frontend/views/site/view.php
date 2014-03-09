@@ -112,9 +112,10 @@ $clr = function ($data) {
             <h2>Комментарии:</h2><br/>
     <? foreach ($comments as $comment): ?>
                 <div class="comments">
-                    <span class="comments_author"><kbd><?= $comment['id']; ?></kbd></span>
+
+					<span class="comments_author"><kbd><?= $comment['title']; ?></kbd></span>
+					<span class="comments_author"><kbd><?= $comment['id']; ?></kbd></span>
                     <span class="comments_author"><kbd><?= $comment['user']['username']; ?></kbd></span>
-                    <span class="comments_author"><kbd><?= $comment['date'] = date('d-m-Y H:i:s'); ?></kbd></span>
                     <br>
                     <blockquote class="blockquote"><?= $comment['comment']; ?></blockquote>
                 </div>
