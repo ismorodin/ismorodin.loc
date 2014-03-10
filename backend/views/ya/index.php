@@ -25,10 +25,8 @@
     });
 </script>
 <div id="posts">
-
 </div>
 <div class="form-inline-block" style="text-align: center;">
-
     <p>Переводчик</p>
     <form id="myForm" class="form-group">
         <a href="#">загрузиться</a>
@@ -36,28 +34,4 @@
         <input type="submit" value="Translate >" name="submit"><br>
         <textarea name="out"></textarea>
     </form>
-    <?PHP
-//use yii\helpers\Html;
-//use yii\widgets\ActiveForm;
-
-    /**
-     * START FORM
-     */
-//    $form = ActiveForm::begin([
-//                'id' => 'translate',
-//                'errorCssClass' => 'has-error has-feedback',
-//                'method' => 'POST',
-//                    ]
-//    );
-//
-//    echo Html::input('input', 'input') . "<br/";
-//    echo Html::input('input', 'input') . "<br/";
-//    echo Html::submitInput('РћС‚РїСЂР°РІРёС‚СЊ', ['name' => 'submit', 'style' => 'background:red;']);
-//    echo Html::input('output', 'output');
-//    /**
-//     * END FORM
-//     */
-//    ActiveForm::end();
-//    
-    ?>
 </div>
