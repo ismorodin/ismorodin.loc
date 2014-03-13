@@ -1,31 +1,34 @@
 <?php
-
 namespace backend\controllers;
-
+use sdatest;
 use Yii;
 
 /**
- * Yacontroller need for translate
+ * Class YaController
  *
- * @author Иван Смородин
- *
+ * @package backend\controllers
  */
 class YaController extends BackendController
 {
-
+	/**
+	 * @var string
+	 */
 	protected $key = 'cw.1.1.20140309T112227Z.04ecc4233dc9e35a.38404c72f76ce2de43bf2d87ac7f0a4120ef34b3';
+	/**
+	 * @var string
+	 */
 	protected $url_api = 'http://cleanweb-api.yandex.ru/1.0/';
 
 	/**
-	 * display form for translate
-	 *
-	 * @category translate
+	 * @return string
 	 */
 	public function actionGet()
 	{
 		return $this->renderPartial('index');
 	}
-
+	/**
+	 * Check spam
+	 */
 	public function actionCheck()
 	{
 		$api_key = $this->key;
@@ -51,5 +54,4 @@ class YaController extends BackendController
 		}
 		curl_close($ch);
 	}
-
 }

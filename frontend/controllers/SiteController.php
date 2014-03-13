@@ -22,11 +22,18 @@ use Yii;
 class SiteController extends Controller
 {
 
+	/**
+	 * Api unique key
+	 * @var string
+	 */
 	protected $key = 'cw.1.1.20140309T112227Z.04ecc4233dc9e35a.38404c72f76ce2de43bf2d87ac7f0a4120ef34b3';
+	/**
+	 * @var string
+	 */
 	protected $url_api = 'http://cleanweb-api.yandex.ru/1.0/';
 
 	/**
-	 * @inheritdoc
+	 * @return array
 	 */
 	public function behaviors()
 	{
@@ -50,8 +57,9 @@ class SiteController extends Controller
 		];
 	}
 
+
 	/**
-	 * @inheritdoc
+	 * @return array
 	 */
 	public function actions()
 	{
@@ -93,7 +101,7 @@ class SiteController extends Controller
 	}
 
 	/**
-	 * Show detailed news
+	 * Show detailed news and comments
 	 *
 	 * Example: /site/view/59
 	 *
@@ -179,7 +187,6 @@ class SiteController extends Controller
 	public function actionLogout()
 	{
 		Yii::$app->user->logout();
-		return $this->goHome();
 	}
 
 	/**
@@ -213,8 +220,9 @@ class SiteController extends Controller
 
 	/*
 	 * Registration for site
+	 *
+	 * @return string|\yii\web\Response
 	 */
-
 	public function actionSignup()
 	{
 		$model = new SignupForm();
@@ -237,6 +245,7 @@ class SiteController extends Controller
 	/**
 	 * Recovery of the password
 	 */
+
 	public function actionRequestPasswordReset()
 	{
 		$model = new PasswordResetRequestForm();
